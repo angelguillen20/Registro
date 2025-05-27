@@ -1,5 +1,6 @@
 package com.Registro.Registro.Repository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,8 +12,48 @@ import com.Registro.Registro.Model.RegistroMedico;
 @Repository
 public class RegistroRepository {
 
+    public void RegistroMedicoRepository() {
+        // Crear exámenes para el primer registro
+        ExamenDiagnostico examen1 = new ExamenDiagnostico(1, "Hemograma", "Análisis de sangre completo", "Ayuno 8 horas", null);
+        ExamenDiagnostico examen2 = new ExamenDiagnostico(2, "Rayos X", "Radiografía de tórax", "No requiere preparación", null);
+
+        
+        listaExamenDiagnosticos.add(examen1);
+        listaExamenDiagnosticos.add(examen2);
+
+        RegistroMedico registro1 = new RegistroMedico(
+            1,
+            LocalDate.of(2023, 5, 15),
+            "Infección respiratoria",
+            "Antibióticos por 7 días",
+            "Paciente responde bien al tratamiento",
+            "Consulta general",
+            listaExamenDiagnosticos
+        );
+
+        // Asociar el registro médico a cada examen
+        examen1.setRegistroMedico(registro1);
+        examen2.setRegistroMedico(registro1);
+
+        // Crear otro registro sin exámenes
+        RegistroMedico registro2 = new RegistroMedico(
+            2,
+            LocalDate.of(2023, 6, 10),
+            "Dolor lumbar",
+            "Fisioterapia y analgésicos",
+            "Requiere seguimiento",
+            "Consulta especializada",
+            new ArrayList<>()
+        );
+
+        listaRegistro.add(registro1);
+        listaRegistro.add(registro2);
+    }
+
     private List<ExamenDiagnostico> listaExamenDiagnosticos = new ArrayList<>();
     private List<RegistroMedico> listaRegistro = new ArrayList<>();
+
+
 
 
     public List<RegistroMedico> obtenerRegistros(){
