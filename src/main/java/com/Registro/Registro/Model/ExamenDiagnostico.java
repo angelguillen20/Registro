@@ -3,6 +3,8 @@ package com.Registro.Registro.Model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -19,6 +21,7 @@ import lombok.NoArgsConstructor;
 public class ExamenDiagnostico {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String NombreExamen;
     private String DescripcionExamen;
