@@ -49,6 +49,7 @@ public class RegistroController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable int id) {
         registroService.eliminarRegistro(id);
+        
         return ResponseEntity.noContent().build();
     }
 }
