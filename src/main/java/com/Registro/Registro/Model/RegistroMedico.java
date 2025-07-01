@@ -29,7 +29,7 @@ public class RegistroMedico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @JsonFormat(pattern = "yyyy-MM-dd")
-    private LocalDate fechaExamen;
+    private LocalDate date;
     private String Diagnostico;
     private String Tratamiento;
     private String Observaciones;
