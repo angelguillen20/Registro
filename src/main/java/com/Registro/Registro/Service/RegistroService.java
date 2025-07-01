@@ -42,7 +42,7 @@ public class RegistroService {
     @Transactional
     public RegistroMedico actualizarRegistro(int id, RegistroMedico nuevoRegistro) {
         return registroRepository.findById(id).map(registroExistente -> {
-            registroExistente.setDate(nuevoRegistro.getDate());
+            registroExistente.setFechaExamen(nuevoRegistro.getFechaExamen());
             registroExistente.setDiagnostico(nuevoRegistro.getDiagnostico());
             registroExistente.setTratamiento(nuevoRegistro.getTratamiento());
             registroExistente.setObservaciones(nuevoRegistro.getObservaciones());
