@@ -12,7 +12,7 @@ import com.Registro.Registro.Model.ExamenDiagnostico;
 import com.Registro.Registro.Model.RegistroMedico;
 import com.Registro.Registro.Repository.RegistroRepository;
 
-import net.datafaker.Faker;
+import com.github.javafaker.Faker;
 
 @Profile("dev")
 @Component

@@ -35,7 +35,7 @@ public class RegistroServiceTest {
     void setUp() {
         registro = new RegistroMedico();
         registro.setId(1);
-        registro.setFechaExamen(LocalDate.of(2023, 1, 15));
+        registro.setFechaExamen(LocalDate.of(2023, 10, 1));
         registro.setDiagnostico("Hipertensión");
         registro.setTratamiento("Dieta y ejercicio");
         registro.setObservaciones("Paciente estable");
